@@ -1,6 +1,7 @@
 import dotenv from 'dotenv';
 dotenv.config();
 import http from 'http';
+import cors from 'cors';
 import app from './app.js';
 import connectDB from './config/db.js';
 import { ensureDefaultAdmin } from './utils/setupDefaultUser.js';
