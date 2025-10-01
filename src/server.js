@@ -6,6 +6,13 @@ import connectDB from './config/db.js';
 import { ensureDefaultAdmin } from './utils/setupDefaultUser.js';
 import { initSocket } from './serverSocket.js';
 
+app.use(cors({
+  origin: process.env.NODE_ENV === 'production' 
+    ? 'https://crm-f-five.vercel.app'
+    : 'http://localhost:5173',
+  credentials: true
+}))
+
 const PORT = process.env.PORT || 8000;
 
 const start = async () => {
