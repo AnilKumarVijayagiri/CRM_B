@@ -43,4 +43,8 @@ app.use((err, req, res, next) => {
   res.status(err.status || 500).json({ error: err.message || 'Server error' });
 });
 
+app.get("/", (req, res) => {
+  res.send("🚀 SkyCRM Backend is running successfully!");
+});
+
 export default app;
